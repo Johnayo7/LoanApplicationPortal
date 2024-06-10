@@ -6,6 +6,8 @@ namespace LoanApplicationPortal.Models.Domain
 {
     public class LoanApplication : BaseEntity
     {
+        public int Id { get; set; }
+
         [Required(ErrorMessage = ("Name is required"))]
         [RegularExpression(@"^[A-Z][a-z]*(\s[A-Z][a-z]*)*$",
               ErrorMessage = "Every Name must start with a capital letter and contain only letters")]
@@ -33,6 +35,8 @@ namespace LoanApplicationPortal.Models.Domain
         public decimal LoanRequestAmount { get; set; }
 
         public string Status { get; set; } = "In Progress";
+
+        public DateTime DateCreated { get; set; } = DateTime.UtcNow;
 
         public static ValidationResult ValidateAge(DateTime dateOfBirth, ValidationContext context)
         {

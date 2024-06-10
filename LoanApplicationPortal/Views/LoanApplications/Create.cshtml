@@ -1,0 +1,43 @@
+﻿@model LoanApplication
+
+<h2>Loan Application Form</h2>
+
+<form asp-action="Create" method="post">
+    <div>
+        <label asp-for="Name"></label>
+        <input asp-for="Name" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+    <div>
+        <label asp-for="Address"></label>
+        <textarea asp-for="Address"></textarea>
+        <span asp-validation-for="Address" class="text-danger"></span>
+    </div>
+    <div>
+        <label asp-for="DateOfBirth"></label>
+        <input asp-for="DateOfBirth" type="date" />
+        <span asp-validation-for="DateOfBirth" class="text-danger"></span>
+    </div>
+    <div>
+        <label asp-for="Email"></label>
+        <input asp-for="Email" />
+        <span asp-validation-for="Email" class="text-danger"></span>
+    </div>
+    <div>
+        <label asp-for="HomeOwner"></label>
+        <input asp-for="HomeOwner" type="checkbox" />
+        <span asp-validation-for="HomeOwner" class="text-danger"></span>
+    </div>
+    <div>
+        <label asp-for="LoanRequestAmount"></label>
+        <input asp-for="LoanRequestAmount" />
+        <span asp-validation-for="LoanRequestAmount" class="text-danger"></span>
+    </div>
+    <button type="submit">Submit</button>
+</form>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

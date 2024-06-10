@@ -1,0 +1,39 @@
+﻿@model LoanApplication
+
+<h2>Edit Loan Application</h2>
+
+<form asp-action="Edit">
+    <div>
+        <label asp-for="Name"></label>
+        <input asp-for="Name" readonly />
+    </div>
+    <div>
+        <label asp-for="Address"></label>
+        <textarea asp-for="Address" readonly></textarea>
+    </div>
+    <div>
+        <label asp-for="DateOfBirth"></label>
+        <input asp-for="DateOfBirth" type="date" readonly />
+    </div>
+    <div>
+        <label asp-for="Email"></label>
+        <input asp-for="Email" readonly />
+    </div>
+    <div>
+        <label asp-for="HomeOwner"></label>
+        <input asp-for="HomeOwner" type="checkbox" readonly />
+    </div>
+    <div>
+        <label asp-for="LoanRequestAmount"></label>
+        <input asp-for="LoanRequestAmount" readonly />
+    </div>
+    <div>
+        <label asp-for="Status"></label>
+        <select asp-for="Status">
+            <option>In Progress</option>
+            <option>Approved</option>
+            <option>Declined</option>
+        </select>
+    </div>
+    <button type="submit">Save</button>
+</form>
